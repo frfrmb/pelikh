@@ -23,7 +23,7 @@
             --bg-color: #414857;
             --text-main: #f8fafc;
             --text-muted: #bcbcbc;
-            --accent-color: #dfdfdf; /* Золотисто-оранжевый для акцентов */
+            --accent-color: #dfdfdf; 
             --accent-hover: #4c607c;
             --glass-bg: rgba(255, 255, 255, 0.03);
             --glass-border: rgba(255, 255, 255, 0.1);
@@ -72,13 +72,13 @@
         .circle-1 {
             top: -10%; left: -10%;
             width: 50vw; height: 50vw;
-            background: #1e3a8a; /* Синий */
+            background: #1e3a8a;
         }
 
         .circle-2 {
             bottom: -10%; right: -5%;
             width: 40vw; height: 40vw;
-            background: #4c607c; /* Коричнево-золотой */
+            background: #4c607c; 
         }
 
         /* ======================== Типографика и Общие стили ======================== */
@@ -275,7 +275,7 @@ h1, h2, h3, h4 {
 
         /* ======================== Контакты ======================== */
 
-        /* Стили конкретно для блока контактов */
+   
 .contacts-section {
     padding: 80px 0;
     color: #f8fafc;
@@ -294,7 +294,7 @@ h1, h2, h3, h4 {
     gap: 20px;
 }
 
-/* Эффект карточки */
+
 .contact-card {
     text-decoration: none;
     display: flex;
@@ -304,17 +304,17 @@ h1, h2, h3, h4 {
     text-align: center;
     transition: all 0.3s ease;
     cursor: pointer;
-    background: rgba(255, 255, 255, 0.03); /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.03); 
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 20px;
 }
 
-/* Ховер-эффект */
+
 .contact-card:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.07);
-    border-color: #dfdfdf; /* Акцентный золотой цвет */
+    border-color: #dfdfdf; 
 }
 
 .contact-icon {
@@ -337,7 +337,7 @@ h1, h2, h3, h4 {
     color: #fff;
 }
 
-/* Адаптивность для мобильных */
+
 @media (max-width: 600px) {
     .contacts-grid {
         grid-template-columns: 1fr;
@@ -523,7 +523,7 @@ h1, h2, h3, h4 {
     </footer>
 
     <script>
-        // --- 1. Мобильное меню (Бургер) ---
+        // --- Мобильное меню ---
         const burger = document.getElementById('burgerMenu');
         const navLinks = document.getElementById('navLinks');
         const overlay = document.getElementById('mobileOverlay');
@@ -534,7 +534,7 @@ h1, h2, h3, h4 {
             overlay.classList.toggle('active');
             document.body.classList.toggle('no-scroll');
             
-            // Меняем иконку бургера
+
             const icon = burger.querySelector('i');
             if(navLinks.classList.contains('active')) {
                 icon.classList.remove('fa-bars');
@@ -548,7 +548,7 @@ h1, h2, h3, h4 {
         burger.addEventListener('click', toggleMenu);
         overlay.addEventListener('click', toggleMenu);
 
-        // Закрываем меню при клике на ссылку
+
         links.forEach(link => {
             link.addEventListener('click', () => {
                 if (navLinks.classList.contains('active')) {
@@ -557,18 +557,6 @@ h1, h2, h3, h4 {
             });
         });
 
-        // --- 2. Аккордеон (FAQ) ---
-        const faqQuestions = document.querySelectorAll('.faq-question');
-
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', function() {
-                // Закрываем другие (по желанию, можно убрать для независимого открытия)
-                faqQuestions.forEach(q => {
-                    if (q !== this) {
-                        q.classList.remove('active');
-                        q.nextElementSibling.style.maxHeight = null;
-                    }
-                });
 
                 // Тоггл текущего
                 this.classList.toggle('active');
