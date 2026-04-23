@@ -557,6 +557,19 @@ h1, h2, h3, h4 {
             });
         });
 
+        // --- 2. Аккордеон (FAQ) ---
+        const faqQuestions = document.querySelectorAll('.faq-question');
+
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', function() {
+              
+                faqQuestions.forEach(q => {
+                    if (q !== this) {
+                        q.classList.remove('active');
+                        q.nextElementSibling.style.maxHeight = null;
+                    }
+                });
+
 
                 // Тоггл текущего
                 this.classList.toggle('active');
